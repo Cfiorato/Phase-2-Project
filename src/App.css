@@ -36,3 +36,30 @@
     transform: rotate(360deg);
   }
 }
+.library {
+  align-items: center;
+  margin: 0 auto;
+  list-style: none;
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.tabs {
+  align-items: center;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: 20px;
+  border: 2px solid;
+  width: 250px;
+  border-color: #282c34;
+  height: 400px;
+}
+
+.cardImage {
+  position: relative;
+  max-width: 240px;
+  max-height: 240px;
+}
+
