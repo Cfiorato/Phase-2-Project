@@ -1,15 +1,10 @@
 import Search from './Search'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import SongTab from './SongTab'
 
-function Library() {
-  let [songs, setSongs] = useState([])
+function Library({ songs }) {
+
   let [search, setSearch] = useState("")
-  useEffect(() => {
-    fetch('http://localhost:3001/Library')
-      .then(resp => resp.json())
-      .then(data => setSongs(data))
-  }, [])
   
   function handleSearch(e){
     setSearch(e.target.value)

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import SongCard from './SongCard'
+
 
 function SongTab({songData}) {
   let { image, artist, song, album } = songData
