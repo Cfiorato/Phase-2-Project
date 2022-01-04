@@ -1,16 +1,10 @@
 .App {
   text-align: center;
+  font-family: Andale Mono, monospace;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  background-color: #A9A9A9;
 }
 
 .App-header {
@@ -37,17 +31,17 @@
   }
 }
 .library {
-  align-items: center;
   margin: 0 auto;
   list-style: none;
-  width: 80%;
+  width: 90%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 30px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
 }
 
 .tabs {
   align-items: center;
+  text-align: justify center;
   display: grid;
   grid-template-rows: auto 1fr auto;
   padding: 20px;
@@ -55,6 +49,11 @@
   width: 250px;
   border-color: #282c34;
   height: 400px;
+  line-height: 1;
+}
+
+.tabs h3 {
+  margin-bottom: 5px;
 }
 
 .cardImage {
@@ -63,3 +62,21 @@
   max-height: 240px;
 }
 
+.home {
+  height: 450px;
+  color: #89CFF0;
+  margin-top: 80px;
+  padding-top: 30px;
+}
+
+.home::before {
+  content: "";
+  background-image: url("https://i0.wp.com/windowscustomization.com/wp-content/uploads/2019/09/Simple-Audio-Visualizer.gif?fit=768%2C432&quality=80&strip=all&ssl=1");
+  background-size: cover;
+  opacity: .25;
+}
+
+.search {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
