@@ -21,8 +21,8 @@ function App() {
       <Header />
       <Routes>
         <Route path="/Library" element={<Library songs={songs}/>}/>
-        <Route path="/Details" element={<SongCard />}/>
-        <Route path="/Playlist" element={<Playlist />}/>
+        <Route path="/Details" element={<SongCard songs={songs}/>}/>
+        <Route path="/Playlist" element={<Playlist songs={songs}/>}/>
         <Route path="/" element={<Home />}/>
       </Routes>
     </div>

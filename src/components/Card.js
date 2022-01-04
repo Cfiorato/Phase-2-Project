@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 
 function Card({ img, title, artist, video, album, genre, producers, lyrics, released, comments }) {
     const [liked, setLiked] = useState(false)
+    
 
     function toggleLiked(){
         liked ? setLiked(false) : setLiked(true)
@@ -10,8 +11,10 @@ function Card({ img, title, artist, video, album, genre, producers, lyrics, rele
 
     return (
         <div>
-            <div style={{background: {img}}}>
-                <h2>{title}-{artist}</h2>
+            <div style={{
+                    backgroundImage: `url(${img})`
+                }}>
+                <h2>{title} - {artist}</h2>
             </div>
             <div>
                 <h3 id='album'>Album: {album}</h3>

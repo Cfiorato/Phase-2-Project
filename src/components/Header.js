@@ -2,7 +2,7 @@
 
 function Header() {
   return(
-    <h1>first.fm (header here)</h1>
+    <h1>FIRST.FM</h1>
   )
 }
 

@@ -1,7 +1,13 @@
 
-function Playlist() {
+function Playlist({ songs }) {
+  
   return(
-    <h2>Playlist Here</h2>
+    <div>
+      <h2>My Playlist</h2>
+      <ul id='playlist'>
+        
+      </ul>
+    </div>
   )
 }
 
