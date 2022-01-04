@@ -125,6 +125,17 @@ header a {
   margin-left: 200px;
   color: black;
   text-decoration: none;
-  font-weight: bold;
-  
+  font-weight: bold; 
+}
+
+.greeting {
+  background-color: white;
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+  height: 200px;
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0, 0, 0);
 }
