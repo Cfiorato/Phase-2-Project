@@ -44,20 +44,24 @@ body {
   text-align: justify center;
   display: grid;
   grid-template-rows: auto 1fr auto;
-  padding: 20px;
+  padding: 15px;
   border: 2px solid;
-  width: 250px;
+  width: 300px;
   border-color: #282c34;
-  height: 400px;
+  height: 450px;
   line-height: 1;
 }
 
 .tabs h3 {
   margin-bottom: 5px;
+  margin-top: 10px;
 }
 
 .cardImage {
   position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   max-width: 240px;
   max-height: 240px;
 }

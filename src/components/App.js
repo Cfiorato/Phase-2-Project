@@ -1,4 +1,5 @@
 import '../App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './Header'
 import Library from './Library'
 import SongCard from './SongCard'
