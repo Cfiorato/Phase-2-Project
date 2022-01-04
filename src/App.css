@@ -65,6 +65,8 @@ body {
   max-width: 240px;
   max-height: 240px;
   z-index: 3;
+  border: 3px solid black;
+  box-shadow: 0 0 8px rgba(0, 0, 0);
 }
 
 .home {
