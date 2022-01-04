@@ -1,16 +1,24 @@
 import React from 'react';
-import Card from './Card'
+import Card from './Card';
+import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 
-function SongCard({ songs }) {
-const songCard = songs.map(song => {
-  return <Card img={song.image} title={song.song} artist={song.artist} video={song.video} album={song.album}
-  genre={song.genre} producers={song.producers} lyrics={song.lyrics} released={song.released} isLiked={song.liked} comments={song.comments}/>
-})
+function SongCard() {
+
+const { id } = useParams()
+const [currentSong, setCurrentSong] = useState([])
+
+useEffect(() => {
+  fetch(`http://localhost:3001/Library/${id}`)
+  .then(resp => resp.json())
+  .then(data => setCurrentSong(data))
+}, [id])
+
+console.log(currentSong)
   
   return(
     <div>
-      <h2>Song Card Here</h2>
-      {songCard}
+      <Card currentSong={currentSong} />
     </div>
   )
 }

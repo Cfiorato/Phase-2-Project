@@ -46,10 +46,13 @@ body {
   grid-template-rows: auto 1fr auto;
   padding: 20px;
   border: 2px solid;
+  border-radius: 10px;
   width: 250px;
   border-color: #282c34;
   height: 400px;
   line-height: 1;
+  background: white;
+  box-shadow: 0 0 8px rgba(0, 0, 0);
 }
 
 .tabs h3 {
@@ -79,4 +82,8 @@ body {
 .search {
   margin-top: 30px;
   margin-bottom: 30px;
+  box-shadow: 0 0 8px rgba(0, 0, 0);
+  width: 200px;
+  height: 30px;
+  text-align: center;
 }
