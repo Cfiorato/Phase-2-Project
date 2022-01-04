@@ -3,7 +3,7 @@ function Search({search, onSearch}) {
   return(
     <div> 
       <input
-        placeholder="Search Here" 
+        placeholder="Song, Artist, or Album" 
         className="search"
         type="text" 
         value={search} 

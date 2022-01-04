@@ -17,18 +17,17 @@ function Card({ currentSong }) {
     return (
         <div>
             <div style={{
-                    backgroundImage: `url(${image})`, height:'300px', width:'600px', marginLeft:'450px'
+                    backgroundImage: `url(${image})`, height:'300px', width:'800px', marginLeft:'350px'
                 }}>
                 <h2 style={{ color: 'white', 
                         textShadowColor:'black',
                         textShadowOffset: { width: -1, height: 0 },
                         textShadowRadius: 10
-                    
                  }}>
                     {song} - {artist}
                 </h2>
             </div>
-            <div style={{ margin:'20px'}}>
+            <div style={{ marginLeft:'430px', marginTop: '20px'}}>
                 <ReactPlayer url={video} />
             </div>
             <div className='card-container'>
