@@ -130,7 +130,7 @@ header a {
 }
 
 .greeting {
-  background-color: white;
+  background: white;
   width: 50%;
   margin-left: 25%;
   margin-right: 25%;
@@ -139,4 +139,5 @@ header a {
   border: 2px solid black;
   border-radius: 10px;
   box-shadow: 0 0 8px rgba(0, 0, 0);
+  position: absolute;
 }
