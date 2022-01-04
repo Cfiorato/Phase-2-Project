@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 
 
-function Card({ img, title, artist, video, album, genre, producers, lyrics, released, comments }) {
+function Card({ song }) {
     const [liked, setLiked] = useState(false)
+
+    const { img, title, artist, video, album, genre, producers, lyrics, released, comments } = song
 
     function toggleLiked(){
         liked ? setLiked(false) : setLiked(true)
