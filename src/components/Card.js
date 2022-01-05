@@ -1,17 +1,14 @@
-import React, { useState } from 'react';
 import ReactPlayer from 'react-player';
 
 
-function Card({ currentSong, liked, setLiked }) {
+function Card({ currentSong, isLiked, setIsLiked }) {
+    const { id, image, song, artist, video, album, genre, producers, lyrics, released, comments } = currentSong
     
-    
-
-    const { image, song, artist, video, album, genre, producers, lyrics, released, comments } = currentSong
 
     function toggleLiked(){
-        liked ? setLiked(false) : setLiked(true)
-    }
-
+        setIsLiked(!isLiked)
+    }    
+    
     return (
         <div>
             <div>
@@ -26,7 +23,7 @@ function Card({ currentSong, liked, setLiked }) {
                 <a id='link' href={lyrics}>Lyrics</a>
                 <h3 id='producers'>Producer(s): {producers}</h3> 
                 <h3 id='released'>Release Date: {released}</h3>
-                <button onClick={toggleLiked}> {liked ? 'Remove From Playlist':'Add to Playlist 💙' }</button>
+                <button id={id} onClick={toggleLiked}> {isLiked ? 'Remove From Playlist':'Add to Playlist 💙' }</button>
             </div>
             <div>
                 <h3 id='comment-header'>Comments</h3>
