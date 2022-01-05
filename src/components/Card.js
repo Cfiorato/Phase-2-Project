@@ -2,13 +2,11 @@ import React, { useState } from 'react';
 import ReactPlayer from 'react-player';
 
 
-function Card({ currentSong }) {
-    const [liked, setLiked] = useState(false)
+function Card({ currentSong, liked, setLiked }) {
+    
     
 
     const { image, song, artist, video, album, genre, producers, lyrics, released, comments } = currentSong
-
-    console.log(image)
 
     function toggleLiked(){
         liked ? setLiked(false) : setLiked(true)
@@ -16,16 +14,8 @@ function Card({ currentSong }) {
 
     return (
         <div>
-            <div style={{
-                    backgroundImage: `url(${image})`, height:'300px', width:'800px', marginLeft:'350px'
-                }}>
-                <h2 style={{ color: 'white', 
-                        textShadowColor:'black',
-                        textShadowOffset: { width: -1, height: 0 },
-                        textShadowRadius: 10
-                 }}>
-                    {song} - {artist}
-                </h2>
+            <div>
+                <h2>{song} - {artist}</h2>
             </div>
             <div style={{ marginLeft:'430px', marginTop: '20px'}}>
                 <ReactPlayer url={video} />

@@ -3,7 +3,7 @@ import Card from './Card';
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
-function SongCard() {
+function SongCard({ liked, setLiked }) {
 
 const { id } = useParams()
 const [currentSong, setCurrentSong] = useState([])
@@ -18,7 +18,7 @@ console.log(currentSong)
   
   return(
     <div>
-      <Card currentSong={currentSong} />
+      <Card currentSong={currentSong} liked={liked} setLiked={setLiked} />
     </div>
   )
 }

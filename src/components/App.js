@@ -9,6 +9,7 @@ import { useState, useEffect } from 'react'
 
 function App() {
   let [songs, setSongs] = useState([])
+  let [liked, setLiked] = useState(false)
   
   useEffect(() => {
     fetch('http://localhost:3001/Library')
@@ -16,13 +17,19 @@ function App() {
       .then(data => setSongs(data))
   }, [])
 
+
+
+ const likedSongs = songs.filter(song => {
+   return song.liked
+ })
+
   return (
     <div className="App">
       <Header />
       <Routes>
         <Route path="/Library" element={<Library songs={songs}/>}/>
-        <Route path="/Details/:id" element={<SongCard />}/>
-        <Route path="/Playlist" element={<Playlist />}/>
+        <Route path="/Details/:id" element={<SongCard liked={liked} setLiked={setLiked} />}/>
+        <Route path="/Playlist" element={<Playlist songs={likedSongs} />}/>
         <Route path="/" element={<Home />}/>
       </Routes>
     </div>
