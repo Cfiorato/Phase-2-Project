@@ -7,6 +7,7 @@ function SongCard() {
 
 const { id } = useParams()
 const [currentSong, setCurrentSong] = useState([])
+const [isLiked, setIsLiked] = useState(currentSong.liked)
 
 useEffect(() => {
   fetch(`http://localhost:3001/Library/${id}`)
@@ -14,11 +15,18 @@ useEffect(() => {
   .then(data => setCurrentSong(data))
 }, [id])
 
-console.log(currentSong)
+useEffect(() => {
+  fetch(`http://localhost:3001/Library/${id}`, {
+      method: "PATCH",
+      headers: { 'Content-Type': 'application/json'},
+      body: JSON.stringify({liked: isLiked})
+  }) 
+}, [isLiked]) 
+
   
   return(
     <div>
-      <Card currentSong={currentSong} />
+      <Card currentSong={currentSong} isLiked={isLiked} setIsLiked={setIsLiked} />
     </div>
   )
 }
