@@ -27,7 +27,7 @@ function LoginForm({ handleLogin, loggedIn, userName }) {
     </div>
   :
   <div className="login">
-    <h2>You're Signed In {userName}</h2>
+    <h2>You're Signed In As {userName}</h2>
     <button className="logout" onClick={onLogout}>
       Sign Out
     </button>

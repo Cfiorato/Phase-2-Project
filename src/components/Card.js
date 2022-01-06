@@ -6,6 +6,7 @@ import CommentCard from './CommentCard'
 function Card({ currentSong, isLiked, setIsLiked, comments }) {
     let [kComment, setKComment] = useState("")
     let [commentList, setCommentList] = useState([])
+    let [userComment, setUserComment] = useState('')
 
     const { id, song, artist, video, album, genre, producers, lyrics, released } = currentSong
     
@@ -28,6 +29,20 @@ function Card({ currentSong, isLiked, setIsLiked, comments }) {
         commentList.map(comment => <CommentCard key={comment.id} comment={comment} />)
         : 
         <div></div>
+    
+    let postedUserComment = userComment ? 
+        <div className="comment">
+            <h3>User</h3>
+            <p>{userComment}</p>
+        </div> 
+        : 
+        <div></div>
+
+    function handleComment(e) {
+        e.preventDefault()
+        setUserComment(e.target.newComment.value)
+        e.target.reset()
+    }
     
     return (
         <div id='songCard-div' style={{
@@ -55,11 +70,18 @@ function Card({ currentSong, isLiked, setIsLiked, comments }) {
             <div>
                 <h3 id='comment-header'>Comments</h3>
             </div>
+            <form className='comment-form' onSubmit={(e) => handleComment(e)}>
+                <h3>Leave a Comment</h3>
+                <textarea className="text-box" type='input' name='newComment'></textarea>
+                <br/>
+                <input className="form-button" type='submit' value='Submit' />
+            </form>
             <div className='comment'>
                 <h3>@KanyeWest:</h3>
                 <p>{kComment}</p> 
             </div>
             {commentCards}
+            {postedUserComment}
         </div>
     )
 }
