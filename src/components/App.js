@@ -11,13 +11,12 @@ function App() {
   let [songs, setSongs] = useState([])
   let [liked, setLiked] = useState(false)
   
+  
   useEffect(() => {
     fetch('http://localhost:3001/Library')
       .then(resp => resp.json())
       .then(data => setSongs(data))
   }, [])
-
-
 
  const likedSongs = songs.filter(song => {
    return song.liked
