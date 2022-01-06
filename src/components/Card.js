@@ -5,6 +5,9 @@ import { useEffect, useState } from 'react/cjs/react.development';
 function Card({ currentSong, isLiked, setIsLiked }) {
     let [comment, setComment] = useState("")
     const { id, image, song, artist, video, album, genre, producers, lyrics, released, comments } = currentSong
+    // const renderComments = comments.map(comment => comment.comment)
+
+    console.log(comments)
     
 
     function toggleLiked(){
@@ -17,8 +20,6 @@ function Card({ currentSong, isLiked, setIsLiked }) {
         .then(data => setComment(data.quote))
     }, [])
 
-    console.log(comment)
-    
     return (
         <div id='songCard-div' style={{
             background: "white",
@@ -45,6 +46,7 @@ function Card({ currentSong, isLiked, setIsLiked }) {
             <div>
                 <h3 id='comment-header'>Comments</h3>
                 <p>@KanyeWest: {comment}</p>
+                {/* <p>{renderComments}</p> */}
             </div>
         </div>
     )
