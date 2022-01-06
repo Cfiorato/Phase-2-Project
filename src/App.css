@@ -150,3 +150,34 @@ header a {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 20px;
 }
+
+.comment {
+  margin-top: 20px;
+  line-height: 1.5;
+  width: 70%;
+  display: inline-block;
+  background: dodgerblue;
+  border-radius: 10px;
+  padding: 10px;
+  border: 2px solid black
+}
+
+.comment h3 {
+  background: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 2px;
+  width: 60%;
+  display: inline-block;
+}
+
+.comment p {
+  background: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  width: 85%;
+  display: inline-block;
+  margin-top: 5px;
+  font-size: 15px;
+}

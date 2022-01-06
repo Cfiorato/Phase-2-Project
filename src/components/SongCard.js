@@ -21,12 +21,12 @@ useEffect(() => {
       headers: { 'Content-Type': 'application/json'},
       body: JSON.stringify({liked: isLiked})
   }) 
-}, [isLiked, id]) 
+}, [isLiked]) 
 
   
   return(
-    <div>
-      <Card currentSong={currentSong} isLiked={isLiked} setIsLiked={setIsLiked} />
+    <div className='card-details'>
+      <Card currentSong={currentSong} isLiked={isLiked} setIsLiked={setIsLiked} comments={currentSong.comments} />
     </div>
   )
 }

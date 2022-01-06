@@ -21,20 +21,14 @@ function App() {
       .then(data => setSongs(data))
   }, [])
   
-  const likedSongs = songs.filter(song => {
-    return song.liked
-  })
 
-<<<<<<< HEAD
   function handleLogin(name, status){
     setUserName(name)
     setLoggedIn(status)
   }
-=======
  const likedSongs = songs.filter(song => {
    return song.liked
  })
->>>>>>> 908df503a5664adca650151423198dfb362b4715
 
   return (
     <div className="App">
