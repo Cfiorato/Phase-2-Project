@@ -141,3 +141,12 @@ header a {
   box-shadow: 0 0 8px rgba(0, 0, 0);
   position: absolute;
 }
+
+#playlist {
+  margin: 0 auto;
+  list-style: none;
+  width: 90%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
