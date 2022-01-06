@@ -21,7 +21,7 @@ useEffect(() => {
       headers: { 'Content-Type': 'application/json'},
       body: JSON.stringify({liked: isLiked})
   }) 
-}, [isLiked]) 
+}, [isLiked, id]) 
 
   
   return(

@@ -15,6 +15,9 @@ function Header() {
         <a className="button" href="/Playlist">
           Playlist 🎧
         </a>
+        <a className="button" href="/Login">
+          Login 🎧
+        </a>
       </nav>
     </header>
     
