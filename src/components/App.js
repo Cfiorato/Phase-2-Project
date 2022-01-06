@@ -14,6 +14,7 @@ function App() {
   let [userName, setUserName] = useState('')
   let [loggedIn, setLoggedIn] = useState(false)
   
+  
   useEffect(() => {
     fetch('http://localhost:3001/Library')
       .then(resp => resp.json())
@@ -24,10 +25,16 @@ function App() {
     return song.liked
   })
 
+<<<<<<< HEAD
   function handleLogin(name, status){
     setUserName(name)
     setLoggedIn(status)
   }
+=======
+ const likedSongs = songs.filter(song => {
+   return song.liked
+ })
+>>>>>>> 908df503a5664adca650151423198dfb362b4715
 
   return (
     <div className="App">

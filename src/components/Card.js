@@ -1,20 +1,37 @@
 import ReactPlayer from 'react-player';
+import { useEffect, useState } from 'react/cjs/react.development';
 
 
 function Card({ currentSong, isLiked, setIsLiked }) {
+    let [comment, setComment] = useState("")
     const { id, image, song, artist, video, album, genre, producers, lyrics, released, comments } = currentSong
     
 
     function toggleLiked(){
         setIsLiked(!isLiked)
     }    
+
+    useEffect(() => {
+        fetch('https://api.kanye.rest')
+        .then(res => res.json())
+        .then(data => setComment(data.quote))
+    }, [])
+
+    console.log(comment)
     
     return (
-        <div>
+        <div id='songCard-div' style={{
+            background: "white",
+            width: '750px',
+            marginLeft: '390px',
+            padding: '10px',
+            lineHeight: '4px',
+            borderRadius: '15px'
+        }}>
             <div>
                 <h2>{song} - {artist}</h2>
             </div>
-            <div style={{ marginLeft:'430px', marginTop: '20px'}}>
+            <div style={{ marginLeft:'60px', marginTop: '20px'}}>
                 <ReactPlayer url={video} />
             </div>
             <div className='card-container'>
@@ -27,6 +44,7 @@ function Card({ currentSong, isLiked, setIsLiked }) {
             </div>
             <div>
                 <h3 id='comment-header'>Comments</h3>
+                <p>@KanyeWest: {comment}</p>
             </div>
         </div>
     )
