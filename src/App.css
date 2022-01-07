@@ -214,3 +214,14 @@ header a {
 .login input {
   margin-left: 10px;
 }
+
+.login {
+  background: white;
+  padding: 20px;
+  display: inline-block;
+  width: 30%;
+  height: 100px;
+  border: 2px solid black;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0, 0, 0);
+}
