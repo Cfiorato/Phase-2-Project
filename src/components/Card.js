@@ -3,17 +3,17 @@ import { useEffect, useState } from 'react';
 import CommentCard from './CommentCard'
 
 
-function Card({ currentSong, isLiked, setIsLiked, comments }) {
+function Card({ currentSong, comments, handleLike, userName }) {
     let [kComment, setKComment] = useState("")
     let [commentList, setCommentList] = useState([])
     let [userComment, setUserComment] = useState('')
 
-    const { id, song, artist, video, album, genre, producers, lyrics, released } = currentSong
+    const { id, song, artist, video, album, genre, producers, lyrics, released, liked } = currentSong
     
     
 
     function toggleLiked(){
-        setIsLiked(!isLiked)
+        handleLike(!liked)
     }    
     
     useEffect(() => {setCommentList(comments)}, [comments])
@@ -32,7 +32,7 @@ function Card({ currentSong, isLiked, setIsLiked, comments }) {
     
     let postedUserComment = userComment ? 
         <div className="comment">
-            <h3>User</h3>
+            <h3>{userName ? userName : "Anonymous"}</h3>
             <p>{userComment}</p>
         </div> 
         : 
@@ -65,7 +65,7 @@ function Card({ currentSong, isLiked, setIsLiked, comments }) {
                 <a id='link' href={lyrics}>Lyrics</a>
                 <h3 id='producers'>Producer(s): {producers}</h3> 
                 <h3 id='released'>Release Date: {released}</h3>
-                <button id={id} onClick={toggleLiked}> {isLiked ? 'Remove From Playlist':'Add to Playlist 💙' }</button>
+                <button id={id} onClick={toggleLiked}> {liked ? 'Remove From Playlist':'Add to Playlist 💙' }</button>
             </div>
             <div>
                 <h3 id='comment-header'>Comments</h3>
