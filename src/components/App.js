@@ -38,7 +38,7 @@ function App() {
         <Route path="/Details/:id" element={<SongCard likedChanged={likedChanged} userName={userName} setLikedChanged={setLikedChanged} />}/>
         <Route path="/Playlist" element={<Playlist songs={likedSongs} userName={userName} loggedIn={loggedIn} />}/>
         <Route path="/Login" element={<LoginForm handleLogin={handleLogin} loggedIn={loggedIn} userName={userName} />}/>
-        <Route path="/" element={<Home />}/>
+        <Route path="/" element={<Home userName={userName}/>}/>
       </Routes>
     </div>
   );
