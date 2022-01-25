@@ -25,8 +25,8 @@ useEffect(() => {
 
   
   return(
-    <div>
-      <Card currentSong={currentSong} isLiked={isLiked} setIsLiked={setIsLiked} />
+    <div className='card-details'>
+      <Card currentSong={currentSong} isLiked={isLiked} setIsLiked={setIsLiked} comments={currentSong.comments} />
     </div>
   )
 }

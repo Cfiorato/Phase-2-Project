@@ -1,13 +1,14 @@
 import SongTab from "./SongTab"
 
-function Playlist({ songs }) {
- 
+function Playlist({ songs, userName, loggedIn, sound }) {
+
   return(
     <div>
-      <h2>My Playlist</h2>
+      <h2>{loggedIn ? `${userName}'s` : 'My'} Playlist</h2>
       <ul id='playlist'>
         {songs.map(song => <SongTab songData={song}/>)}
       </ul>
+
     </div>
   )
 }

@@ -1,8 +1,12 @@
 import { Link } from 'react-router-dom'
 
 
+
 function SongTab({songData}) {
-  let { image, artist, song, album, id } = songData
+  let { image, artist, song, album, id, sound } = songData
+
+  console.log(sound)
+
   
   const path = `/Details/${id}`
   
@@ -19,3 +23,4 @@ function SongTab({songData}) {
 
 
 export default SongTab
+
