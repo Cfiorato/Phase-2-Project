@@ -3,30 +3,31 @@ import Card from './Card';
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
-function SongCard({ liked, setLiked }) {
+function SongCard({ likedChanged, setLikedChanged, userName}) {
 
 const { id } = useParams()
 const [currentSong, setCurrentSong] = useState([])
-const [isLiked, setIsLiked] = useState(currentSong.liked)
 
 useEffect(() => {
   fetch(`http://localhost:3001/Library/${id}`)
   .then(resp => resp.json())
   .then(data => setCurrentSong(data))
-}, [id])
+}, [id, likedChanged])
 
-useEffect(() => {
+
+function handleLike(liked) {
   fetch(`http://localhost:3001/Library/${id}`, {
       method: "PATCH",
       headers: { 'Content-Type': 'application/json'},
-      body: JSON.stringify({liked: isLiked})
+      body: JSON.stringify({liked: liked})
   }) 
-}, [isLiked]) 
+  .then(setLikedChanged(!likedChanged))
+}
 
   
   return(
     <div className='card-details'>
-      <Card currentSong={currentSong} isLiked={isLiked} setIsLiked={setIsLiked} comments={currentSong.comments} />
+      <Card currentSong={currentSong} handleLike={handleLike} comments={currentSong.comments} userName={userName} />
     </div>
   )
 }

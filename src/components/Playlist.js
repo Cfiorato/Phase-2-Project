@@ -6,7 +6,7 @@ function Playlist({ songs, userName, loggedIn, sound }) {
     <div>
       <h2>{loggedIn ? `${userName}'s` : 'My'} Playlist</h2>
       <ul id='playlist'>
-        {songs.map(song => <SongTab songData={song}/>)}
+        {songs.map(song => <SongTab key={song.id} songData={song}/>)}
       </ul>
 
     </div>

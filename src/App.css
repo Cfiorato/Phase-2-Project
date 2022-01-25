@@ -127,6 +127,7 @@ header a {
   text-decoration: none;
   font-weight: bold; 
   font-size: 20px;
+  cursor: pointer;
 }
 
 .greeting {
@@ -180,4 +181,47 @@ header a {
   display: inline-block;
   margin-top: 5px;
   font-size: 15px;
+}
+
+.comment-form {
+  background: dodgerblue;
+  padding: 10px;
+  width: 70%;
+  display: inline-block;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.comment-form h3{
+  color: white;
+  font-weight: bold;
+}
+
+.comment-form .text-box {
+  width: 300px;
+  height: 75px;
+  border: 1px solid black;
+  border-radius: 5px;
+  max-width: 500px;
+  text-align: center
+}
+
+.form-button {
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+.login input {
+  margin-left: 10px;
+}
+
+.login {
+  background: white;
+  padding: 20px;
+  display: inline-block;
+  width: 30%;
+  height: 100px;
+  border: 2px solid black;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0, 0, 0);
 }
